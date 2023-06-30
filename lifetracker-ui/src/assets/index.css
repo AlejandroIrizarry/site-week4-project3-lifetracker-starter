@@ -1,0 +1,85 @@
+.Tile {
+  border-radius: 10px;
+  background: white;
+  width: calc(50% - 10px);
+  padding: 16px;
+  min-width: 80px;
+  min-width: 250px;
+  min-height: 250px;
+  margin-bottom: 16px;
+  transition: all 0.25s ease-in-out;
+  box-shadow: #09064a26 0 2px 34px;
+}
+
+.Tile:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.tiles {
+  flex-direction: row;
+}
+
+.tiles {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.Navbar {
+  padding-top: 20px;
+}
+
+.ExercisePage .button {
+  display: flex;
+}
+
+.ExercisePage .button button {
+  flex: 1;
+}
+
+.NutritionPage {
+  background: #f7fafc;
+}
+
+.NutritionPage .nutrition-feed {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+}
+
+.white {
+  color: #fff;
+}
+
+.NutritionPage .button {
+  display: flex;
+}
+
+.NutritionPage .button button {
+  flex: 1;
+}
+
+.SleepPage .button {
+  display: flex;
+}
+
+.SleepPage .button button {
+  flex: 1;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  background: #f7fafc;
+}
+
+a {
+  cursor: pointer;
+}

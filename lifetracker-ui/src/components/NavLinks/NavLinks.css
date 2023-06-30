@@ -1,24 +1,11 @@
-.navbar {
-  display: flex;
-  margin: 0px auto;
-  max-width: 1310px;
-  padding-top: 50px;
-  padding-inline: 20px;
-  flex-direction: row;
-  height: 70px;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-}
-.navbar li a {
+.nav-links {
   color: #405ce8;
   font-weight: 600;
   cursor: pointer;
   opacity: 0.7;
 }
 
-.navbar li a:hover {
+.nav-link:hover {
   opacity: 1;
 }
 
@@ -28,7 +15,7 @@
   flex-direction: row;
 }
 
-.navbar .content {
+.nav-links {
   max-width: var(--content-width);
   width: 100%;
   margin: 0 auto;
@@ -37,11 +24,11 @@
   align-items: center;
 }
 
-.navbar .content .logo {
+.nav-links {
   width: 100px;
   margin-right: 50px;
 }
-.navbar .content .socials {
+.nav-links {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -50,7 +37,7 @@
   margin-right: 50px;
 }
 
-.navbar .content .links {
+.nav-links {
   display: flex;
   flex-direction: row;
   align-items: center;

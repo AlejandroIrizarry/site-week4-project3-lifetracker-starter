@@ -1,0 +1,41 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.login-card {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.avatar-icon {
+  border-radius: var(--chakra-radii-full);
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: var(--chakra-fontWeights-medium);
+  position: relative;
+  flex-shrink: 0;
+  color: var(--chakra-colors-white);
+  --avatar-border-color: var(--chakra-colors-white);
+  border-color: var(--avatar-border-color);
+  vertical-align: top;
+  width: var(--chakra-sizes-12);
+  height: var(--chakra-sizes-12);
+  font-size: calc(1.2rem);
+  background: var(--chakra-colors-teal-500);
+}
