@@ -1,8 +1,8 @@
 import axios from "axios";
-const API_BASE_URL =
-  process.env.NODE_ENV === "production"
-    ? PRODUCTION_API_BASE_URL
-    : "http://localhost:3001/";
+// const API_BASE_URL =
+//   process.env.NODE_ENV === "production"
+//     ? PRODUCTION_API_BASE_URL
+//     : "http://localhost:3001/";
 
 class ApiClient {
   constructor(remoteHostUrl) {
@@ -84,4 +84,4 @@ class ApiClient {
   }
 }
 
-export default new ApiClient("http://localhost:3001/");
+export default new ApiClient("https://lifetracker-ui-429a.onrender.com/");
