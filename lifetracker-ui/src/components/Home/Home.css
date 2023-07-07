@@ -70,6 +70,7 @@
   box-shadow: 10px 15px 5px rgba(204, 202, 202, 0.422);
   max-width: 30rem;
   height: auto;
+  margin-left: 20px;
 }
 
 img {
