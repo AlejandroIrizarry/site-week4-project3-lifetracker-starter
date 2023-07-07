@@ -80,4 +80,4 @@ class ApiClient {
   }
 }
 
-export default new ApiClient("https://lifetracker-ui-429a.onrender.com/");
+export default new ApiClient("https://lifetracker-api-6sbz.onrender.com");
