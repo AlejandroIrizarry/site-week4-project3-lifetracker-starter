@@ -7,6 +7,9 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
 const NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV : "test";
 const IS_TESTING = process.env.NODE_ENV == "test" ? true : false;
 
+//get secret key in .env
+const SECRET_KEY = process.env.SECRET_KEY || "CHANGE_THIS";
+
 // Use dev database, testing database, or via env var, production database
 function getDatabaseUri() {
   const dbUser = process.env.DATABASE_USER || "postgres";
@@ -37,4 +40,5 @@ module.exports = {
   getDatabaseUri,
   BCRYPT_WORK_FACTOR,
   IS_TESTING,
+  SECRET_KEY,
 };

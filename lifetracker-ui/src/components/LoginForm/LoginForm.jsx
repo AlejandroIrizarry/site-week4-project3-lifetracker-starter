@@ -1,97 +1,96 @@
 import * as React from "react";
 import avatar from "../../assets/avatar.svg";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import axios from "axios";
+import AuthContext from "../../contexts/auth";
+import apiClient from "../../services/apiClient";
 
-export default function LoginForm({
-  errors,
-  setErrors,
-  loginForm,
-  setLoginForm,
-  isLoggedIn,
-  setIsLoggedIn,
-}) {
+export default function LoginForm(props) {
+  const { userContext } = React.useContext(AuthContext);
+  const [user, setUser] = userContext;
   let navigate = useNavigate();
 
-  console.log("loginForm=", loginForm);
-  function handleOnLoginChange(event) {
-    setLoginForm((e) => ({ ...e, [event.target.name]: event.target.value }));
+  const loginFormInit = {
+    email: "",
+    password: "",
+  };
+
+  const [loginForm, setLoginForm] = React.useState(loginFormInit);
+
+  // reset error message on mount
+  React.useEffect(() => {
+    props.setErrors();
+  }, []);
+
+  const onFormChange = (event) => {
+    setLoginForm((prevForm) => ({
+      ...prevForm,
+      [event.target.name]: event.target.value,
+    }));
     console.log("loginFormAfter=", loginForm);
-  }
+    props.setErrors();
+  };
 
-  const loginUser = async (event) => {
-    event.preventDefault();
-    if (loginForm.email == "" || loginForm.password == "") {
-      setErrors("Missing Field");
-    } else if (loginForm.email.indexOf("@") <= 0) {
-      setErrors("Invalid email!");
-    }
-
-    try {
-      const response = await axios.post("http://localhost:3001/auth/login", {
-        email: loginForm.email,
-        password: loginForm.password,
-      });
-      console.log("response reg=", response);
-
-      if (response?.data?.user) {
-        setErrors("");
-        navigate("/activity");
-        setIsLoggedin(true);
-        console.log("yo", errors);
-        setLoginForm({
-          email: "",
-          password: "",
-        });
-        console.log("works6");
-      }
-    } catch (error) {
-      if (errors == "") {
-        setErrors("Invalid Password and Username combo");
-      }
+  const handleOnSubmit = async () => {
+    const { data, error } = await apiClient.loginUser(loginForm);
+    if (error) props.setErrors(error);
+    if (data?.user) {
+      setUser(data.user);
+      console.log("login form token received:", data.token);
+      apiClient.setToken(data.token);
     }
   };
+  //setIsLoggedIn={props.setIsLoggedIn(true)
 
   return (
     <div className="login-form">
-      <div className="login-card">
+      <div className="loginCard">
+        {user?.email && (
+          <Navigate
+            to="/activity"
+            replace={true}
+            setIsLoggedIn={props.setIsLoggedIn(true)}
+          />
+        )}
         <span className="avatar-icon">
           <img src={avatar} alt="avatar icon" />
         </span>
-        <h2>Welcome</h2>
+        <h2 id="loginform-title">Welcome</h2>
         <div className="form">
-          <form>
-            <div className="form-section">
-              <input
-                className="form-input"
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={loginForm.email}
-                onChange={handleOnLoginChange}
-              ></input>
-            </div>
-            <div className="form-section">
-              <input
-                className="form-input"
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={loginForm.password}
-                onChange={handleOnLoginChange}
-              ></input>
-            </div>
-            <button className="submit-login" onClick={loginUser}>
-              Login
-            </button>
-          </form>
+          <p className="error" style={{ color: "red" }}>
+            {props?.errorMessage}
+          </p>
+          <div className="login-form-section">
+            <input
+              className="form-input"
+              name="email"
+              placeholder="Email"
+              value={loginForm.email}
+              onChange={onFormChange}
+              required
+              type="email"
+            />
+          </div>
+          <div className="login-form-section">
+            <input
+              className="form-input"
+              name="password"
+              placeholder="Password"
+              value={loginForm.password}
+              onChange={onFormChange}
+              required
+              type="password"
+            />
+          </div>
+          <button onClick={(e) => handleOnSubmit()} className="submit-login">
+            Login
+          </button>
         </div>
-      </div>
-      <div>
-        New to us?
-        <a href="/register"> Sign Up</a>
+        <p>
+          New to Us? <Link to="/register">Sign Up</Link>
+        </p>
       </div>
     </div>
   );

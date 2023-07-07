@@ -23,9 +23,9 @@ By the end of this project you will be able to...
 
 ### Core Features
 
-- [ ] **The Landing Page:** Display a large hero image and a brief blurb on what this application is about. _Note:_ This is the only page that unauthenticated users should be able to view.
-- [ ] **Registration Page:** A form that allows the user to sign up with their email, password, username, first name, and last name.
-- [ ] **Login Page:** A form that allows users to login with email and password.
+- [x] **The Landing Page:** Display a large hero image and a brief blurb on what this application is about. _Note:_ This is the only page that unauthenticated users should be able to view.
+- [x] **Registration Page:** A form that allows the user to sign up with their email, password, username, first name, and last name.
+- [x] **Login Page:** A form that allows users to login with email and password.
 - [ ] When a user first authenticates, they should be redirected to an authenticated view (i.e., the detailed activity page). When they sign out, all frontend data should be reset.
 - [ ] **The Nav Bar:** Implement customized views for users who are logged in vs not logged in.
   - [ ] If the user is logged in, it should display a **Sign Out** button.
@@ -193,7 +193,7 @@ Update the `App` component to manage authentication state:
 
 #### Implement the `RegistrationPage` component
 
-- [ ] Build the **`RegistrationPage`** component to:
+- [x] Build the **`RegistrationPage`** component to:
   - [ ] Render JSX that is wrapped by an element with the class name of `registration-page`
   - [ ] Using either a custom hook, context, or manually handled state, check to see if a user is already logged in
     - [ ] If the user is already logged in, it should redirect them to the `/activity` page

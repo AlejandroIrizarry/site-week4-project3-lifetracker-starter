@@ -1,19 +1,22 @@
-.NutritionPage {
-  background: #f7fafc;
+.nutrition-page-header {
+  background: #81b3fa;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-inline-start: 6px;
+  padding-inline-end: 6px;
+  margin-top: 50px;
 }
-.NutritionPage .nutrition-feed {
+
+.nutrition-page-heading {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  width: 100%;
-  max-width: 600px;
+  gap: 6px;
+  text-align: center;
 }
-.white {
-  color: white;
-}
-.NutritionPage .button {
-  display: flex;
-}
-.NutritionPage .button button {
-  flex: 1;
+
+.nutrition-page-title {
+  line-height: 1.33;
+  color: #ffff;
+  font-weight: bolder;
+  font-size: 3rem;
 }

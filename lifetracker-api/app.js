@@ -11,6 +11,8 @@ const app = express();
 const security = require("./middleware/security");
 app.use(security.extractUserFromJwt);
 const authRoutes = require("./routes/auth");
+const nutritionRoutes = require("./routes/nutrition");
+const activityRoutes = require("./routes/activity");
 
 // Enable CORS middleware to handle cross-origin requests
 app.use(cors());
@@ -22,6 +24,12 @@ app.use(morgan("tiny"));
 app.use(express.json());
 
 app.use("/auth", authRoutes);
+
+// set up routes for nutrition section
+app.use("/nutrition", nutritionRoutes);
+
+// set up routes for activity section
+app.use("/activity", activityRoutes);
 
 //test GET request
 app.get("/", (req, res, next) => {

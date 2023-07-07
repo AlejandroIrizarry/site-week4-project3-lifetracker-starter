@@ -13,10 +13,10 @@ CREATE TABLE nutrition (
     id          SERIAL PRIMARY KEY,
     name        TEXT NOT NULL,
     category    TEXT NOT NULL,
+    quantity    INTEGER NOT NULL,
     calories    INTEGER NOT NULL,
-    quantity    INTEGER NOT NULL DEFAULT 1,
-    image_url   TEXT NOT NULL,
-    user_id     INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    created_at  TIMESTAMP DEFAULT NOW ()
+    image       TEXT,
+    user_email  TEXT NOT NULL,
+    created_at  TIMESTAMP NOT NULL DEFAULT NOW(),
+    FOREIGN KEY (user_email) REFERENCES users(email)
 );

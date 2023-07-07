@@ -6,6 +6,7 @@
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
+  text-align: center;
 }
 
 .login-card {
@@ -18,8 +19,12 @@
   margin-bottom: 10px;
 }
 
+#loginform-title {
+  margin-bottom: 1em;
+  font-size: 2.5em;
+}
+
 .avatar-icon {
-  border-radius: var(--chakra-radii-full);
   display: inline-flex;
   -webkit-box-align: center;
   align-items: center;
@@ -27,15 +32,52 @@
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
-  font-weight: var(--chakra-fontWeights-medium);
+  font-weight: bolder;
   position: relative;
-  flex-shrink: 0;
-  color: var(--chakra-colors-white);
-  --avatar-border-color: var(--chakra-colors-white);
-  border-color: var(--avatar-border-color);
-  vertical-align: top;
-  width: var(--chakra-sizes-12);
-  height: var(--chakra-sizes-12);
-  font-size: calc(1.2rem);
-  background: var(--chakra-colors-teal-500);
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--pure-white);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 2px 5px rgba(204, 202, 202, 0.422);
+  margin-bottom: 2rem;
+}
+
+.login-form-section {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: var(--border-color);
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-input {
+  border-radius: 5px;
+  height: 30px;
+  width: 50%;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.submit-login {
+  background: #d3f3f780;
+  border-radius: 10px;
+  font-size: 20px;
+  border-color: #f8fbcceb;
+  border-style: groove;
+  padding: 5px;
+  width: 25%;
+}
+
+.submit-login:hover {
+  background: #41a5b0d6;
+  color: white;
 }

@@ -36,10 +36,10 @@ class User {
     if (user) {
       const isValid = await bcrypt.compare(credentials.password, user.password);
       if (isValid) {
+        console.log(user);
         return User.makePublicUser(user);
       }
     }
-
     throw new UnauthorizedError("Invalid credentials");
   }
 

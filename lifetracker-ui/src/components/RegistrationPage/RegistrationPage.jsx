@@ -12,9 +12,8 @@ export default function RegistrationPage({
 }) {
   return (
     <div className="registration-page">
-      <Navbar />
       {isLoggedIn ? (
-        <div>You are logged in already</div>
+        <ActivityPage />
       ) : (
         <RegistrationForm
           errors={errors}

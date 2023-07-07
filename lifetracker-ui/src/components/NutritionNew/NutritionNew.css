@@ -1,0 +1,22 @@
+.nutrition-new-header {
+  background: #81b3fa;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-inline-start: 6px;
+  padding-inline-end: 6px;
+  margin-top: 50px;
+}
+
+.nutrition-new-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: center;
+}
+
+.nutrition-new-title {
+  line-height: 1.33;
+  color: #ffff;
+  font-weight: bolder;
+  font-size: 3rem;
+}

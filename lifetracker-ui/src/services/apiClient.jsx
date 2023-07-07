@@ -1,4 +1,8 @@
 import axios from "axios";
+const API_BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? PRODUCTION_API_BASE_URL
+    : "http://localhost:3001/";
 
 class ApiClient {
   constructor(remoteHostUrl) {
@@ -6,14 +10,14 @@ class ApiClient {
     this.token = null;
     this.tokenName = "lifetracker_token";
   }
-
+  //setter
   setToken(token) {
     this.token = token;
     localStorage.setItem(this.tokenName, token);
   }
 
   async request({ endpoint, method = `GET`, data = {} }) {
-    const url = `${this.remoteHostUrl}/${endpoint}`;
+    const url = `${this.remoteHostUrl}${endpoint}`;
 
     const headers = { "Content-Type": "application/json" };
 
@@ -56,25 +60,28 @@ class ApiClient {
 
   async createNutrition(credentials) {
     return await this.request({
-      endpoint: `nutrition/`,
+      endpoint: `nutrition/create`,
       method: `POST`,
       data: credentials,
     });
   }
 
-  async logoutUser() {
-    this.setToken(null);
-    localStorage.setItem(this.tokenName, "");
-  }
   async fetchNutrition() {
     return await this.request({ endpoint: `nutrition/`, method: `GET` });
   }
 
-  async getNutritionById(nutritionId) {
+  async fetchNutritionById(id) {
     return await this.request({
-      endpoint: `nutrition/${nutritionId}`,
+      endpoint: `nutrition/id/${id}`,
       method: `GET`,
     });
   }
+
+  // activity requests
+
+  async getActivity() {
+    return await this.request({ endpoint: `activity/`, method: `GET` });
+  }
 }
-export default new ApiClient("http://localhost:3001");
+
+export default new ApiClient("http://localhost:3001/");

@@ -4,32 +4,20 @@ import LoginForm from "../LoginForm/LoginForm";
 import Navbar from "../Navbar/Navbar";
 import ActivityPage from "../ActivityPage/ActivityPage";
 
-export default function LoginPage({
-  errors,
-  setErrors,
-  isLoggedIn,
-  handleLoggedIn,
-  setIsLoggedIn,
-  loginForm,
-  setLoginForm,
-}) {
+export default function LoginPage(props) {
   return (
     <div>
-      <Navbar />
-
-      {isLoggedIn ? (
+      {props.isLoggedIn ? (
         <div>
           <ActivityPage />
         </div>
       ) : (
         <LoginForm
-          isLoggedIn={isLoggedIn}
-          setIsLoggedIn={setIsLoggedIn}
-          errors={errors}
-          setErrors={setErrors}
-          loginForm={loginForm}
-          setLoginForm={setLoginForm}
-          handleLoggedIn={handleLoggedIn}
+          errors={props.errors}
+          setErrors={props.setErrors}
+          handleOnSubmit={props.handleOnSubmit}
+          isLoggedIn={props.isLoggedIn}
+          setIsLoggedIn={props.setIsLoggedIn}
         />
       )}
     </div>

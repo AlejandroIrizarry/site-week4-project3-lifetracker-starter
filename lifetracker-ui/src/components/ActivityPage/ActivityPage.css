@@ -1,0 +1,22 @@
+.activity-page {
+  display: flex;
+  min-height: 100%;
+  width: 100%;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 10rem;
+}
+
+.activity-content {
+  margin-top: 4rem;
+  font-size: 30px;
+}
+
+.activity-header h1 {
+  color: #296058b6;
+}
+
+.activity-header h2 {
+  color: #113669;
+}

@@ -1,0 +1,58 @@
+.nutrition-overview {
+  display: flex;
+  max-width: 1680px;
+  margin-inline: auto;
+  justify-content: center;
+}
+
+.nutrition-feed-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.nutrition-feed-container h2 {
+  font-size: 35px;
+  margin-bottom: 2rem;
+}
+
+.nutrition-create-btn {
+  display: inline-flex;
+  appearance: none;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+  line-height: 1.2;
+  border-radius: 10px;
+  background: #3b9fbd41;
+  border-style: none;
+  height: 3rem;
+  min-width: 5rem;
+  font-size: 15px;
+  font-weight: bold;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  margin-bottom: 3rem;
+}
+
+.nutrition-create-btn:hover {
+  background: #3b9fbd6d;
+}
+
+#empty-fridge {
+  object-fit: cover;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+}

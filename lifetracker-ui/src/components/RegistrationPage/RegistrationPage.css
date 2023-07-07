@@ -1,0 +1,9 @@
+.register-form {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}

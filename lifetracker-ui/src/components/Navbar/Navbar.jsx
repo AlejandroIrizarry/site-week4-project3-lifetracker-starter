@@ -4,7 +4,7 @@ import * as React from "react";
 import "./Navbar.css";
 import NavLinks from "../NavLinks/NavLinks";
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <nav className="navbar">
       <div className="content">
@@ -13,7 +13,12 @@ export default function Navbar() {
             <img src={logo} alt="codepath logo" />
           </Link>
         </div>
-        <NavLinks />
+        <NavLinks
+          isLoggedIn={props.isLoggedIn}
+          setIsLoggedIn={props.setIsLoggedIn}
+          user={props.user}
+          handleOnLogout={props.handleOnLogout}
+        />
       </div>
     </nav>
   );

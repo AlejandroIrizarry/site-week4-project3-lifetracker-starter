@@ -28,6 +28,7 @@
   width: 100px;
   margin-right: 50px;
 }
+
 .nav-links {
   display: flex;
   flex-direction: row;
@@ -46,4 +47,18 @@
   margin-left: auto;
   flex: 1;
   max-width: 650px;
+}
+
+.nav-btn-content {
+  margin-right: 1rem;
+  border-radius: 10px;
+  background: #ffff;
+  border-color: #405ce8;
+  padding: 10px;
+  font-weight: bold;
+  color: #405ce8ac;
+}
+
+.nav-btn-content:hover {
+  background: hsla(234, 100%, 66%, 0.045);
 }

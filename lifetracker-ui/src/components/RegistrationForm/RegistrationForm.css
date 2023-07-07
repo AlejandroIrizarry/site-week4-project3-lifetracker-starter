@@ -1,0 +1,98 @@
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.registration-card {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.registration-card h2 {
+  margin-bottom: 1em;
+  font-size: 2.5em;
+}
+
+.avatar-icon {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--pure-white);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 2px 5px rgba(204, 202, 202, 0.422);
+}
+
+.sign-form-section {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  box-shadow: var(--border-color);
+  justify-content: center;
+  align-items: center;
+}
+
+.form-input {
+  border-radius: 5px;
+  height: 30px;
+  width: 50%;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.split-form-section {
+  display: flex;
+}
+
+.split-form-section .sign-form-section {
+  flex-direction: row;
+}
+
+.split-form-section div.sign-form-section {
+  width: 20rem;
+  justify-content: flex-end;
+  padding: 3px;
+}
+
+.split-form-section div.sign-form-section:nth-child(2) {
+  justify-content: flex-start;
+}
+
+.sign-btn-container {
+  text-align: center;
+}
+
+.sign-submit-registration {
+  justify-content: center;
+  background: #d3f3f780;
+  border-radius: 10px;
+  font-size: 18px;
+  border-color: #f8fbcceb;
+  border-style: groove;
+  padding: 5px;
+  width: 25%;
+}

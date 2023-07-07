@@ -47,7 +47,7 @@ const verifyAuthUser = (req, res, next) => {
 };
 
 module.exports = {
-  jwtFrom,
   verifyAuthUser,
   extractUserFromJwt,
+  jwtFrom,
 };

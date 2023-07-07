@@ -1,6 +1,195 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px auto;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  align-items: center;
+  min-height: 500px;
+  padding-inline-start: 15rem;
+  padding-inline-end: 25rem;
+  margin-bottom: 16px;
+  margin-top: 3em;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  width: 80%;
+  overflow-wrap: break-word;
+  flex-wrap: wrap;
+}
+
+.cta h1 {
+  font-size: 5em;
+  font-weight: bold;
+  align-items: flex-start;
+}
+
+.cta h2 {
+  margin-top: 4px;
+  margin-inline: 0px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+  line-height: 1.5;
+  font-weight: normal;
+  font-size: 2em;
+}
+
+.cta button {
+  width: 20rem;
+  background-color: #0bc5ea;
+  opacity: 0.7;
+  color: var(--pure-white);
+  padding: 16px;
+  font-size: 1em;
+  border-radius: 0.5em;
+  text-align: center;
+  border-style: none;
+}
+
+.cta button:hover {
+  opacity: 1;
+}
+
+.hero-img {
+  width: 50%;
+  margin-bottom: 0px;
+}
+
+.hero-img img {
+  border-radius: 1rem;
+  box-shadow: 10px 15px 5px rgba(204, 202, 202, 0.422);
+  max-width: 30rem;
+  height: auto;
+}
+
+img {
+  border-style: none;
+}
+
 .tiles {
   display: flex;
+  flex-direction: row;
   align-items: center;
   width: 100%;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.tiles-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.tile-header {
+  display: flex;
+  flex-direction: row;
+  font-size: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.tile-header span {
+  padding-left: 0.5rem;
+}
+
+.tile-img {
+  border-radius: 10px;
+  width: 25em;
+  padding: 16px;
+  min-width: 80px;
+  min-height: 250px;
+  margin-bottom: 16px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tile-img img:hover {
+  width: 18rem;
+  height: 18rem;
+}
+
+.tile-img img {
+  transition: all 0.25s ease-in-out;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 10px;
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid rgb(45, 255, 241); /* The typwriter cursor */
+  white-space: wrap;
+  letter-spacing: 0.1em; /* Adjust as needed */
+  animation: typing 8s steps(80, end), blink-caret 0.75s step-end infinite;
+  margin-right: 10rem;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+    height: 100px;
+  }
+  to {
+    width: 100%;
+    height: 100px;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #34d5f6a7;
+  }
+}
+
+@media screen and (max-width: 1330px) {
+  .hero {
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-img {
+    text-align: center;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero div {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .cta h1 {
+    font-size: 3em;
+    align-items: flex-start;
+  }
+
+  .cta h2 {
+    align-items: center;
+    font-size: 1.5em;
+  }
 }

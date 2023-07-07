@@ -1,0 +1,101 @@
+.nutrition-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #81b3fa;
+  margin-bottom: 4rem;
+}
+
+.nutrition-card-content {
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+
+.nutrition-card-header {
+  border-width: 0px;
+  border-style: solid;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: row;
+}
+
+.nutrition-img {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  flex-shrink: 0;
+  vertical-align: top;
+  width: 50px;
+  height: 50px;
+}
+
+.nutrition-img img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nutrition-card-heading {
+  margin-left: 10px;
+}
+
+.nutrition-card-heading h2 {
+  font-weight: bolder;
+  font-size: 20px;
+  line-height: 1.33;
+  color: var(--pure-white);
+  margin-right: 5px;
+}
+
+.nutrition-card-heading h2 span {
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding-inline-start: 5px;
+  padding-inline-end: 5px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: bold;
+  background: #c6f6d5;
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+
+.nutrition-card-body {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.nutrition-card-body div {
+  position: relative;
+  flex: 1 1 0%;
+  color: white;
+}
+
+.nutrition-card-body dt {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.nutrition-card-body dd {
+  vertical-align: baseline;
+  font-weight: bolder;
+  font-size: 25px;
+  font-variant-numeric: proportional-nums;
+}

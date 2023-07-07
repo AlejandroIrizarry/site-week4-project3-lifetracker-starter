@@ -71,14 +71,14 @@ export default function RegistrationForm({
 
   return (
     <div className="registration-form">
-      <div className="register-card">
+      <div className="registration-card">
         <span className="avatar-icon">
           <img src={avatar} alt="avatar icon" />
         </span>
         <h2>Create an Account</h2>
         <div className="form">
           <form>
-            <div className="form-section">
+            <div className="sign-form-section">
               <input
                 className="form-input"
                 type="email"
@@ -88,7 +88,7 @@ export default function RegistrationForm({
                 onChange={handleOnRegistrationChange}
               ></input>
             </div>
-            <div className="form-section">
+            <div className="sign-form-section">
               <input
                 className="form-input"
                 type="text"
@@ -99,7 +99,7 @@ export default function RegistrationForm({
               ></input>
             </div>
             <div className="split-form-section">
-              <div className="form-section">
+              <div className="sign-form-section">
                 <input
                   className="form-input"
                   type="text"
@@ -109,7 +109,7 @@ export default function RegistrationForm({
                   onChange={handleOnRegistrationChange}
                 ></input>
               </div>
-              <div className="form-section">
+              <div className="sign-form-section">
                 <input
                   className="form-input"
                   type="text"
@@ -120,7 +120,7 @@ export default function RegistrationForm({
                 ></input>
               </div>
             </div>
-            <div className="form-section">
+            <div className="sign-form-section">
               <input
                 className="form-input"
                 type="password"
@@ -130,7 +130,7 @@ export default function RegistrationForm({
                 onChange={handleOnRegistrationChange}
               ></input>
             </div>
-            <div className="form-section">
+            <div className="sign-form-section">
               <input
                 className="form-input"
                 type="password"
@@ -140,9 +140,15 @@ export default function RegistrationForm({
                 onChange={handleOnRegistrationChange}
               ></input>
             </div>
-            <button className="submit-registration" onClick={signupUser}>
-              Sign up
-            </button>
+            <div className="sign-btn-container">
+              <button
+                type="submit"
+                className="sign-submit-registration"
+                onClick={signupUser}
+              >
+                Sign up
+              </button>
+            </div>
           </form>
         </div>
       </div>
