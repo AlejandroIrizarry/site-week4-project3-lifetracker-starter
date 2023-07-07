@@ -38,13 +38,16 @@ export default function RegistrationForm({
     }
 
     try {
-      const response = await axios.post("http://localhost:3001/auth/register", {
-        username: registrationForm.username,
-        lastName: registrationForm.lastName,
-        firstName: registrationForm.firstName,
-        email: registrationForm.email,
-        password: registrationForm.password,
-      });
+      const response = await axios.post(
+        "https://lifetracker-api-6sbz.onrender.com/auth/register",
+        {
+          username: registrationForm.username,
+          lastName: registrationForm.lastName,
+          firstName: registrationForm.firstName,
+          email: registrationForm.email,
+          password: registrationForm.password,
+        }
+      );
       console.log("response reg=", response);
 
       if (response?.data?.user) {
