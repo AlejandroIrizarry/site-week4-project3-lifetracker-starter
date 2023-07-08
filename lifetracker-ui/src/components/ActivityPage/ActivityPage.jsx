@@ -1,4 +1,3 @@
-//import ActivityContext from "../../../contexts/activity";
 import * as React from "react";
 import "./ActivityPage.css";
 import { capitalize } from "lodash";

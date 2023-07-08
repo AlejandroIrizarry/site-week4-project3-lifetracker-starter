@@ -3,7 +3,6 @@ import avatar from "../../assets/avatar.svg";
 import { Link, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./LoginForm.css";
-import axios from "axios";
 import AuthContext from "../../contexts/auth";
 import apiClient from "../../services/apiClient";
 
@@ -19,7 +18,6 @@ export default function LoginForm(props) {
 
   const [loginForm, setLoginForm] = React.useState(loginFormInit);
 
-  // reset error message on mount
   React.useEffect(() => {
     props.setErrors();
   }, []);
@@ -29,7 +27,6 @@ export default function LoginForm(props) {
       ...prevForm,
       [event.target.name]: event.target.value,
     }));
-    console.log("loginFormAfter=", loginForm);
     props.setErrors();
   };
 
@@ -38,11 +35,9 @@ export default function LoginForm(props) {
     if (error) props.setErrors(error);
     if (data?.user) {
       setUser(data.user);
-      console.log("login form token received:", data.token);
       apiClient.setToken(data.token);
     }
   };
-  //setIsLoggedIn={props.setIsLoggedIn(true)
 
   return (
     <div className="login-form">

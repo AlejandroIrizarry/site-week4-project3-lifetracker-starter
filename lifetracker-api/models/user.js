@@ -36,7 +36,6 @@ class User {
     if (user) {
       const isValid = await bcrypt.compare(credentials.password, user.password);
       if (isValid) {
-        console.log(user);
         return User.makePublicUser(user);
       }
     }
@@ -82,13 +81,12 @@ class User {
       throw new BadRequestError(`Duplicate username: ${credentials.username}`);
     }
 
-    // hashes the password of the user
+    // enables password encryption
     const hashedPassword = await bcrypt.hash(
       credentials.password,
       BCRYPT_WORK_FACTOR
     );
 
-    // Ensures email contains lowercased chars only
     const normalizedEmail = credentials.email.toLowerCase();
 
     const result = await db.query(

@@ -31,7 +31,6 @@ export const ActivityContextProvider = ({ children }) => {
 
         if (data?.activity) {
           setActivity(data?.activity);
-          console.log(data?.activity);
         }
       } catch (error) {
         console.error(error);

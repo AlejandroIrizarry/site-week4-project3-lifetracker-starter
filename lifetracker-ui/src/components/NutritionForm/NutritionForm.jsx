@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import NutritionContext from "../../contexts/nutrition";
 import apiClient from "../../services/apiClient";
 import "./NutritionForm.css";
-//import { useNutritionContext } from "../../contexts/nutrition";
 
 export default function NutritionForm() {
   const { nutritionContext } = useContext(NutritionContext);
@@ -16,7 +15,7 @@ export default function NutritionForm() {
     calories: 1,
     image: "",
   };
-  //useState hooks
+
   const [form, setForm] = useState(formInit);
   const [error, setError] = useState();
 
@@ -25,26 +24,17 @@ export default function NutritionForm() {
       ...prevForm,
       [event.target.name]: event.target.value,
     }));
-    //reset error message as user is already making changes
     setError();
   };
-  console.log(form);
-  //
+
   const handleOnSubmit = async () => {
     const { data, error } = await apiClient.createNutrition(form);
     if (error) {
       setError(error);
     } else {
-      console.log("hereeeeeeeeeeeee 1");
-      //set nutritions useState
       setNutritions(data.nutritions);
-      console.log("hereeeeeeeeeeeee 2");
-      //reset form
       setForm(formInit);
-      console.log("hereeeeeeeeeeeee 3");
-      //navigate to nutrition main page
       navigate("/nutrition");
-      console.log("hereeeeeeeeeeeee 4");
     }
   };
 
@@ -76,13 +66,7 @@ export default function NutritionForm() {
             <option value={form.category.value}>Food</option>
           </select>
         </div>
-        {/* <input
-        name="category"
-        type={"text"}
-        value={form.category}
-        placeholder={"Fruit"}
-        onChange={(e) => onFormChange(e)}
-      /> */}
+
         <div className="nutrition-form-split-section">
           <div className="nutrition-form-section">
             <label htmlFor="quantity">

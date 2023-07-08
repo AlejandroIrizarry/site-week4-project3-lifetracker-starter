@@ -9,7 +9,6 @@ import {
 import NutritionOverview from "../NutritionOverview/NutritionOverview";
 import NutritionNew from "../NutritionNew/NutritionNew";
 import NutritionDetail from "../NutritionDetail/NutritionDetail";
-import NotFound from "../NotFound/NotFound";
 
 export default function NutritionPage(props) {
   return (

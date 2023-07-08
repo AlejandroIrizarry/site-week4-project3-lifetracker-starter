@@ -17,7 +17,6 @@ export default function RegistrationForm({
       ...e,
       [event.target.name]: event.target.value,
     }));
-    console.log("RegForm=", registrationForm);
   };
 
   const signupUser = async (event) => {
@@ -48,13 +47,11 @@ export default function RegistrationForm({
           password: registrationForm.password,
         }
       );
-      console.log("response reg=", response);
 
       if (response?.data?.user) {
         setErrors("");
         navigate("/login");
         setIsLogged(true);
-        console.log("yo", errors);
         setRegistrationForm({
           email: "",
           username: "",
@@ -63,7 +60,6 @@ export default function RegistrationForm({
           password: "",
           passwordConfirm: "",
         });
-        console.log("works6");
       }
     } catch (error) {
       if (errors == "") {

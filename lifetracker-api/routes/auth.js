@@ -17,7 +17,9 @@ router.get("/me", security.verifyAuthUser, async (req, res, next) => {
 
 router.post("/login", async (req, res, next) => {
   try {
-    const user = await User.login(req.body); // take the users email and password and attempting to authenticate them
+    // authenticate user with given request body
+    const user = await User.login(req.body);
+
     const token = createUserJwt(user);
     return res.status(200).json({ user, token });
   } catch (err) {

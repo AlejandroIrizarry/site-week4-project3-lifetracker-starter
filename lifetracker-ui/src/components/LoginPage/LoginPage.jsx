@@ -1,7 +1,6 @@
 import * as React from "react";
 import "./LoginPage.css";
 import LoginForm from "../LoginForm/LoginForm";
-import Navbar from "../Navbar/Navbar";
 import ActivityPage from "../ActivityPage/ActivityPage";
 
 export default function LoginPage(props) {

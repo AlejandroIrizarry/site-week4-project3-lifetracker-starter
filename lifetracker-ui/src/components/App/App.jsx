@@ -23,7 +23,6 @@ import AuthContext from "../../contexts/auth";
 import ActivityContext from "../../contexts/activity";
 
 function App() {
-  // useContext hook
   const { userContext } = React.useContext(AuthContext);
 
   const { nutritionContext } = React.useContext(NutritionContext);
@@ -46,14 +45,12 @@ function App() {
   const { activityContext } = React.useContext(ActivityContext);
   const [activity, setActivity] = activityContext;
 
-  //Log out handler
   const handleOnLogout = () => {
-    //reset state to empty object
     setUser({});
     setNutrition({});
-    //reset token from local storage
+
+    //remove token from localStorage
     localStorage.removeItem(apiClient.tokenName);
-    console.log("logged out user");
   };
 
   return (

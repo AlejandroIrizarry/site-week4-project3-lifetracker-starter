@@ -20,8 +20,6 @@ export default function NutritionDetail() {
 
       const { data, error } = await apiClient.fetchNutritionById(nutritionId);
 
-      console.log("fetched by id:", nutritionId, " ->", data);
-
       if (data) {
         setNutritionItem(data);
       } else {

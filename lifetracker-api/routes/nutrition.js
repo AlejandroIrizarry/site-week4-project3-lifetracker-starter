@@ -7,22 +7,18 @@ const { authedUserIsNutritionOwner } = require("../middleware/permissions");
 
 router.post("/create", security.verifyAuthUser, async (req, res, next) => {
   try {
-    // get user email to save reference in psql table
     const { email } = res.locals.user;
 
     const user = await User.fetchUserByEmail(email);
-    console.log(user.email);
-    // retrieve new nutrition item data
+    // store new nutrition data
     const nutritionData = req.body;
 
-    // create entry
+    // create nutrition entry
     await Nutrition.create(user.email, nutritionData);
 
-    // fetch again all the nutritions associated with email so the user can be
-    // redirected in the frontend with the new information
+    // fetch again all the nutritions
     const nutritions = await Nutrition.fetch(email);
 
-    // send new table with nutritions
     return res.status(201).json({
       nutritions,
     });
@@ -31,18 +27,16 @@ router.post("/create", security.verifyAuthUser, async (req, res, next) => {
   }
 });
 
-// get one nutrition item based on param
 router.get(
   "/id/:id",
   security.verifyAuthUser,
   authedUserIsNutritionOwner,
   async (req, res, next) => {
     try {
-      //retrieve id in params
       const id = req.params.id;
-      // fetch the nutrition item by id
+
       const nutrition = await Nutrition.fetchById(id);
-      // return single nutrition item
+
       return res.status(200).json({
         ...nutrition,
       });
@@ -52,15 +46,13 @@ router.get(
   }
 );
 
-// main nutrition page retrieves all the nutrition items for user
+// retrieves nutritions
 router.get("/", security.verifyAuthUser, async (req, res, next) => {
   try {
-    //retrieve email
     const { email } = res.locals.user;
 
-    //fetch all nutrition elements associated with email
     const nutritions = await Nutrition.fetch(email);
-    //send back
+
     return res.status(200).json({
       nutritions,
     });

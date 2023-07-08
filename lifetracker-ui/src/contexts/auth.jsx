@@ -16,8 +16,6 @@ export const AuthProvider = ({ children }) => {
       const { data, error } = await apiClient.fetchUserFromToken();
       if (data) {
         setUser(data.user);
-
-        console.log("user logged in from local storage token!!!");
       }
 
       if (error) setError(error);
@@ -31,10 +29,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   React.useEffect(() => {
-    // if user token exists in local storage,
-    // get token and fetch from the db
-    // to see if token is valid and retrieve data
-
+    /* User token exist in the local storage, 
+    fetch token and get from the database to perform token validation, 
+    effectively retrieving necessary data*/
     const token = localStorage.getItem(apiClient.tokenName);
 
     if (token) {
@@ -45,7 +42,6 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  // login user function
   const loginUser = async (loginForm) => {
     const { data, errorLogin } = await apiClient.loginUser(loginForm);
     if (errorLogin) {
@@ -53,13 +49,11 @@ export const AuthProvider = ({ children }) => {
     }
     if (data?.user) {
       setUser(data.user);
-      console.log("login form token received:", data.token);
       apiClient.setToken(data.token);
       return { success: true, user: data?.user };
     }
   };
 
-  // register user function
   const registerUser = async (registrationForm) => {
     const { data, errorRegistration } = await apiClient.signupUser(
       registrationForm
@@ -75,13 +69,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logoutUser = async () => {
-    // reset state data
     setUser({});
-    //reset token from local storage
     localStorage.removeItem(apiClient.tokenName);
   };
 
-  // check if it is still fetching data between renders
   if (!initialized) {
     return (
       <div className="content">
@@ -90,7 +81,6 @@ export const AuthProvider = ({ children }) => {
     );
   }
 
-  // check if any errors have been found in useEffect request
   if (error) {
     return <h1>There has been an error aunthenticating the user!</h1>;
   }

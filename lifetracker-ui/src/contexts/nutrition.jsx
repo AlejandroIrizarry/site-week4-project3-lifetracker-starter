@@ -25,8 +25,6 @@ export const NutritionContextProvider = ({ children }) => {
 
         if (errorNutrition) setError(errorNutrition);
         if (data?.nutritions) setNutritions(data?.nutritions);
-        console.log("fetched nutrition");
-        console.log(data);
       } catch (error) {
         console.error("Fetching data error:", error);
       }

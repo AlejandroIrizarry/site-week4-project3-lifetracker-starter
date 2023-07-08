@@ -2,7 +2,7 @@ const db = require("../db");
 const { BadRequestError, NotFoundError } = require("../utils/errors");
 
 class Nutrition {
-  // function that fetches all nutrition based on user's email
+  // fetching nutritions by user email
   static async fetch(email) {
     const result = await db.query(
       `SELECT id, name, category, quantity, calories, image 
@@ -15,9 +15,8 @@ class Nutrition {
     return result.rows;
   }
 
-  // function that fetches by Id one nutrition item
+  // fetches nutrition by their assigned id
   static async fetchById(id) {
-    console.log(id);
     const parsedId = Number.parseInt(id);
     // check for invalid param
     if (typeof parsedId !== "number" || typeof parsedId === NaN)
@@ -37,9 +36,8 @@ class Nutrition {
     }
   }
 
-  // function that creates new nutritions
+  // creates nutrition
   static async create(email, data) {
-    // check that all field keys and values exist
     const requiredFields = ["name", "category", "quantity", "calories"];
     const stringFields = ["name", "category"];
     requiredFields.forEach((field) => {
@@ -54,7 +52,6 @@ class Nutrition {
       }
     });
 
-    // field error handling
     if (data.quantity <= 0) {
       throw new BadRequestError(`Quantity can't be 0`);
     }
@@ -63,7 +60,6 @@ class Nutrition {
       throw new BadRequestError(`Calories can't be 0`);
     }
 
-    // perform query if all fields are valid
     const result = await db.query(
       `INSERT INTO nutrition (
                 name,

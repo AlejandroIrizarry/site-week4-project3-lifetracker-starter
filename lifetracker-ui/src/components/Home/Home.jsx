@@ -1,5 +1,4 @@
 import * as React from "react";
-import Navbar from "../Navbar/Navbar";
 import "./Home.css";
 import tracker from "../../assets/tracker.jpg";
 import athlete from "../../assets/athlete.jpg";

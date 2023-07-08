@@ -42,7 +42,6 @@ class ApiClient {
   }
 
   async signupUser(credentials) {
-    console.log(credentials);
     return await this.request({
       endpoint: `auth/register`,
       method: `POST`,
