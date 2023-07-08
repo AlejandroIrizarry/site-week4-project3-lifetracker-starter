@@ -2,7 +2,7 @@ import axios from "axios";
 
 class ApiClient {
   constructor(remoteHostUrl) {
-    this.remoteHostUrl = remoteHostUrl || "http://localhost:3001";
+    this.remoteHostUrl = remoteHostUrl;
     this.token = null;
     this.tokenName = "lifetracker_token";
   }
