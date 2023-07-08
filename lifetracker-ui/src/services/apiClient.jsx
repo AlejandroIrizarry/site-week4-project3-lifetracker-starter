@@ -1,9 +1,8 @@
 import axios from "axios";
-import { API_BASE_URL } from "../constants";
 
 class ApiClient {
   constructor(remoteHostUrl) {
-    this.remoteHostUrl = remoteHostUrl;
+    this.remoteHostUrl = remoteHostUrl || "http://localhost:3001";
     this.token = null;
     this.tokenName = "lifetracker_token";
   }
@@ -78,4 +77,4 @@ class ApiClient {
   }
 }
 
-export default new ApiClient(API_BASE_URL);
+export default new ApiClient("https://lifetracker-api-6sbz.onrender.com/");
