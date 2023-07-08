@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_BASE_URL } from "../constants";
 
 class ApiClient {
   constructor(remoteHostUrl) {
@@ -6,7 +7,7 @@ class ApiClient {
     this.token = null;
     this.tokenName = "lifetracker_token";
   }
-  //setter
+
   setToken(token) {
     this.token = token;
     localStorage.setItem(this.tokenName, token);
@@ -72,11 +73,9 @@ class ApiClient {
     });
   }
 
-  // activity requests
-
   async getActivity() {
     return await this.request({ endpoint: `activity/`, method: `GET` });
   }
 }
 
-export default new ApiClient("https://lifetracker-api-6sbz.onrender.com/");
+export default new ApiClient(API_BASE_URL);
