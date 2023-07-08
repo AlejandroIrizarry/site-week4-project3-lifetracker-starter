@@ -37,6 +37,9 @@ export default function NutritionCard(props) {
           </dl>
         </div>
       </div>
+      <div>
+        <h3>{props.created_at}</h3>
+      </div>
     </div>
   );
 }
